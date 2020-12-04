@@ -1,5 +1,11 @@
 <template>
-    <TodosView/>
+    <div class="w-full min-h-screen bg-gradient-to-br from-purple-700 to-indigo-400">
+        <RouterView #default="{ component }">
+            <transition name="fade" mode="out-in">
+                <component :is="component"/>
+            </transition>
+        </RouterView>
+    </div>
 </template>
 
 <script lang="ts">
