@@ -1,28 +1,21 @@
 <template>
     <div class="w-full">
-        <div class="w-full relative">
-            <input class="h-10 rounded-md w-full border-gray-300 border px-2" v-model="handleValue" :name="name"/>
-            <label class="material-input__placeholder absolute text-gray-600"
-                   :class="{ '--input-focus': modelValue.length > 0 }">
-                {{ placeholder }}
-            </label>
-        </div>
-        <p>{{ error }}</p>
+        <input class="w-full bg-white bg-opacity-20 text-white placeholder-white font-medium outline-none h-12 px-3 rounded" 
+               :placeholder="$attrs['placeholder']"
+               :type="$attrs['type']"
+               v-model="handleValue"
+               :name="name"/>
+        <p class="text-white text-sm">{{ error }}</p>
     </div>
 </template>
 
 <script lang='ts'>
 import { defineComponent, computed, inject, Ref, onMounted, PropType } from 'vue';
-import "@/assets/styles/input.css";
 import { FormField } from './Form.vue';
 
 const Input = defineComponent({
     props: {
         modelValue: {
-            type: String,
-            required: true
-        },
-        placeholder: {
             type: String,
             required: true
         },

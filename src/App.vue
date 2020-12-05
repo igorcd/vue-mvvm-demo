@@ -1,10 +1,10 @@
 <template>
     <div class="w-full min-h-screen bg-gradient-to-br from-purple-700 to-indigo-400">
-        <RouterView #default="{ component }">
+        <router-view v-slot="{ Component }">
             <transition name="fade" mode="out-in">
-                <component :is="component"/>
+                <component :is="Component"/>
             </transition>
-        </RouterView>
+        </router-view>
     </div>
 </template>
 
@@ -12,10 +12,7 @@
 import { defineComponent } from 'vue';
 import '@/assets/css/main.css';
 
-import TodosView from './views/TodosView.vue';
-
 export default defineComponent({
-    components: { TodosView },
 });
 </script>
 
