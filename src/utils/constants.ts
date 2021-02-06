@@ -1,0 +1,1 @@
+export const DEFAULT_API_ERROR = "Não conseguimos nos comunicar com o servidor, por favor, tente novamente em breve";

@@ -6,3 +6,12 @@ p, h1, h2, h3, h4, label, span, input {
 
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .survey-card {
+        @apply bg-white rounded-lg 
+        w-full sm:w-auto sm:max-w-xs shadow-lg sm:mx-3 mb-6 h-36
+        flex flex-col items-stretch flex-1 
+        cursor-pointer hover:scale-105 transform transition-transform duration-300;
+    }
+}

@@ -4,6 +4,7 @@
                :placeholder="$attrs['placeholder']"
                :type="$attrs['type']"
                v-model="handleValue"
+               v-mask="mask"
                :name="name"/>
         <p class="text-white text-sm">{{ error }}</p>
     </div>
@@ -12,8 +13,10 @@
 <script lang='ts'>
 import { defineComponent, computed, inject, Ref, onMounted, PropType } from 'vue';
 import { FormField } from './Form.vue';
+import { maska } from 'maska';
 
 const Input = defineComponent({
+    directives: { 'mask': maska },
     props: {
         modelValue: {
             type: String,
@@ -26,6 +29,10 @@ const Input = defineComponent({
         rules: {
             type: Array as PropType<((value: string) => string)[]>,
         },
+        mask: {
+            type: String,
+            default: ''
+        }
     },
     setup(props, context) {
         // Injeção dos dados providos pelo Form

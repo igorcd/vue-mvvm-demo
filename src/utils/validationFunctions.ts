@@ -19,7 +19,6 @@ export const validPhone = (value: string) => {
 };
 
 export const isSame = (value: string, valueToCompare: string) => {
-    console.log(value, valueToCompare);
     const isValid = value === valueToCompare;
     return !isValid ? "Os campos não conferem" : "";
 };
