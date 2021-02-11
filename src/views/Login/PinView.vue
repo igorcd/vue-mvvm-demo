@@ -9,7 +9,7 @@
                    type="tel"
                    placeholder="Pin da enquete" class="mb-4"
                    :rules="[required]"/>
-            <Button>Acessar</Button>
+            <Button @click="$router.push({ name: 'survey', params: { id: 0}})">Acessar</Button>
         </Form>
 
         <div class="text-center text-white font-medium mb-2 hover:underline cursor-pointer" @click="$router.push({name: 'login'})">

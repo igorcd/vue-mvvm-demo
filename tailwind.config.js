@@ -1,6 +1,6 @@
 module.exports = {
-    purge: [],
-    darkMode: false, // or 'media' or 'class'
+    purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+    darkMode: 'class', // or 'media' or 'class'
     theme: {
         fontFamily: {
             sans: ['Ubuntu']

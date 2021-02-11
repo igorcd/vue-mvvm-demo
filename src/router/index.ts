@@ -9,6 +9,7 @@ import PinView from '@/views/Login/PinView.vue';
 import CreateSurveyView from '@/views/Surveys/CreateSurveyView.vue';
 import SurveysView from '@/views/Surveys/SurveysView.vue';
 import SurveyView from '@/views/Surveys/SurveyView.vue';
+import SlidesMainView from '@/views/Slides/SlidesMainView.vue';
 
 const routes: Array<RouteRecordRaw> = [
     // Login
@@ -37,11 +38,13 @@ const routes: Array<RouteRecordRaw> = [
         meta: { isPublic: true },
         component: RegisterView
     },
+    // Validar Telefone
     {
         path: '/phone',
         name: 'phone',
         component: ConfirmPhoneView
     },
+    // Enquetes
     {
         path: '/surveys',
         component: SurveysMainView,
@@ -63,10 +66,20 @@ const routes: Array<RouteRecordRaw> = [
             }
         ]
     },
+    {
+        path: '/slides',
+        name: 'slides',
+        component: SlidesMainView
+    }
 ];
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
+    scrollBehavior: (to) => {
+        if(to.hash) {
+            return { el: to.hash, behavior: 'smooth' };
+        }
+    },
     routes
 });
 
